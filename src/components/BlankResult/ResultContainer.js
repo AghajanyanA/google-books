@@ -1,18 +1,23 @@
 import { connect } from "react-redux";
-import { setSearchData } from "../../redux/bodyReducer";
+import { loadMoreData } from "../../redux/actions/loadSearch";
 import BlankResult from "./BlankResult";
 
 
 const mstp = state => {
     return {
-        isSearched: state.body.searchMade
+        searchInput: state.searchField.searchInput,
+        sort: state.searchField.sortBy,
+        category: state.searchField.category,
+        isSearched: state.body.searchMade,
+        totalItems: state.body.data.totalItems,
+        results: state.body.data.items
     }
 }
 
 const mdtp = dispatch => {
     return {
-        loadData: data => {
-            dispatch(setSearchData(data))
+        loadMoreButton: (query, sort, category) => {
+            dispatch(loadMoreData(query, sort, category))
         }
     }
 }

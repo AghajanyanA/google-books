@@ -1,10 +1,10 @@
 import React from 'react'
 import c from './results.module.css'
 
-const Results = () => {
+const Results = (props) => {
 
     return <div className={c.allWrap}>
-            Results here
+            
     </div>
 }
 

@@ -29,6 +29,26 @@ input:focus {
     border: none;
 }
 
-.searchfield {
-    /* width: 100%; */
+.searchParams {
+    position: absolute;
+    bottom: 20%;
+    white-space: nowrap
+}
+
+.sort {
+    display: inline-block;
+    padding-right: 5%;
+}
+
+.sort span {
+    padding-right: 5px;
+}
+
+.category {
+    padding-left: 5%;
+    display: inline-block;
+}
+
+.category span {
+    padding-right: 5px;
 }

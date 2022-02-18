@@ -1,4 +1,5 @@
-import { combineReducers, createStore } from "redux";
+import { combineReducers, createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
 import bodyReducer from "./bodyReducer";
 import SearchFieldReducer from "./SearchFieldReducer";
 
@@ -7,6 +8,8 @@ const reducers = combineReducers({
    body: bodyReducer
 })
 
-const store = createStore(reducers)
+const store = createStore(reducers, applyMiddleware(...[thunk]))
+
+window.store = store
 
 export default store
