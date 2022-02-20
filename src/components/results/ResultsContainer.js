@@ -1,15 +1,34 @@
 import { connect } from "react-redux";
+import { loadMoreData } from "../../redux/actions/loadSearch";
 import Results from "./Results";
- // UNACTUAL YET
+
+const ResultsContainer = props => {
+
+
+    return (
+        <Results {...props} />
+    )
+}
 const mstp = state => {
     return {
-        searchMade: state.body.searchMade
-    }
-}
-const mdtp = dispatch => {
-    return {
-        
+        text: state.body.searchText,
+        searchInput: state.searchField.searchInput,
+        sort: state.searchField.sortBy,
+        category: state.searchField.category,
+        isSearched: state.body.searchMade,
+        totalItems: state.body.data?.totalItems,
+        results: state.body.data?.items,
+        noMoreResults: state.body.noMoreResults,
+        isLoading: state.body.isLoading
     }
 }
 
-export default connect(mstp, mdtp)(Results)
+const mdtp = dispatch => {
+    return {
+        loadMoreButton: (query, sort, category, currentLoad) => {
+            dispatch(loadMoreData(query, sort, category, currentLoad))
+        }
+    }
+}
+
+export default connect(mstp, mdtp)(ResultsContainer)
