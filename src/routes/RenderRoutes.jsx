@@ -1,12 +1,12 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import ResultContainer from "../components/BlankResult/ResultContainer";
-import Results from "../components/results/Results";
+import BookContainer from "../components/book/BookContainer";
+import ResultsContainer from "../components/results/ResultsContainer";
 
 const RenderRoutes = (props) => (
         <Routes>
-            <Route path='/' element={<ResultContainer />} />
-            <Route path='/search' element={<Results />} />
+            <Route path='/' element={<ResultsContainer />} />
+            <Route path='/:id'  element={<BookContainer />} />
         </Routes>   
 )
 

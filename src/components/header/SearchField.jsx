@@ -1,7 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import c from './search.module.css'
 
 const SearchField = (props) => {
+
+    const navigate = useNavigate()
 
     const notEmptyInput = props.searchInput.trim() !== ''
 
@@ -15,11 +18,13 @@ const SearchField = (props) => {
         props.onInputChange(e.target.value)
     }
     const handleSearch = () => {
+        navigate('/')
         props.searchRequest(props.searchInput, props.sort, props.category)
     }
 
     const onKey = (e) => {
         if (e.key === 'Enter' && notEmptyInput) {
+            navigate('/')
             props.searchRequest(props.searchInput, props.sort, props.category)
         }
     }
