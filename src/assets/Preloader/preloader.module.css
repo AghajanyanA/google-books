@@ -1,0 +1,9 @@
+.preloader {
+    position: fixed;
+    left: 45%;
+    top: 45%;
+    background: rgba(43, 43, 43, 0.637);
+    border-radius: 25px;
+    text-align: center;
+    align-items: center;
+}
