@@ -23,10 +23,12 @@ const Results = (props) => {
                         {props.results?.map(data => <div key={data.id} className={c.card} >
                             <Link to={`/${data.id}`}>
                                 <img src={data.volumeInfo?.imageLinks?.thumbnail} alt="sorry" className={c.image} />
-                                <span className={c.title} >{data.volumeInfo.title}</span>
                             </Link>
+                            <p className={c.title} >
+                                <Link to={`/${data.id}`}> {data.volumeInfo.title} </Link>
+                            </p>
                             <div className={c.cardBottomWrap} >
-                                {data.volumeInfo.authors ? <span className={c.authors} > {data.volumeInfo.authors.join(', ')} </span> : ''}
+                                {data.volumeInfo.authors ? <div className={c.authors} > {data.volumeInfo.authors.join(', ')} </div> : ''}
                                 <span className={c.categories} > {data.volumeInfo.categories} </span>
                             </div>
                         </div>)}

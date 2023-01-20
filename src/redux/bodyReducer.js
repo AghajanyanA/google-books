@@ -25,8 +25,7 @@ const bodyReducer = (state = init_state, action) => {
             }
         case add_more:
             return {
-                ...state, data: {...state.data, items: [...state.data.items, ...action.data.items]} 
-                // ...state.data, data: action.data.items
+                ...state, data: {...state.data, items: [...state.data.items, ...action.data.items]}
             }
         case error_text: {
             return {

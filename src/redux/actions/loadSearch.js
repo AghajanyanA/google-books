@@ -12,8 +12,8 @@ export const loadSearch = (query, sort, category) => async dispatch => {
             dispatch(toggleSearch(true))
             dispatch(setLoading(false))
             dispatch(disableLoadButton(false))
-        } else { //eslint-disable-next-line
-            throw 'No results found!'
+        } else { 
+            throw Error('No results found!')
         }
     }
     catch (e) {

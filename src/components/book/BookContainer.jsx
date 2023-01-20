@@ -4,16 +4,16 @@ import { useLocation } from "react-router-dom";
 import { getBook } from "../../redux/actions/loadSearch";
 import Book from "./Book";
 
-const BookContainer = props => {
+const BookContainer = ({getBookData, book}) => {
     
     const location = useLocation()
     const currentBookId = location.pathname.substring(1)
 
     useEffect(() => {
-        props.getBookData(currentBookId) //eslint-disable-next-line
-    }, [props.getBookData, currentBookId])
+        getBookData(currentBookId)
+    }, [getBookData, currentBookId])
 
-    return <Book book={props.book} />
+    return <Book book={book} />
 }
 
 const mstp = state => {
