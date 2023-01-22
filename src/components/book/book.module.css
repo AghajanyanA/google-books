@@ -15,16 +15,32 @@ img {
     grid-area: info;
     background-color:rgb(212, 212, 212);
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    
 }
-header {
+.title {
+    align-self: center;
     font-size: 28px;
+    margin-bottom: 10px;
+}
+.subtitle {
+    margin: 0;
+    font-weight: 500;
+}
+.details {
+    margin-left: 3.5%;
+}
+.description {
+    font-size: large;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
 }
 
-.description {
-    display: flex;
-    position: relative;
-    left: 15vh;
-    width: 70%;
-    box-shadow: 5px 5px 4px rgba(0,0,0,.1);
-    box-sizing: border-box;
+.descText {
+    font-size: medium;
+    font-weight: normal;
+    margin: 1% 0 0 2%;
 }
